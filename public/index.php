@@ -17,12 +17,14 @@
         <meta name="description" content="Cafe CrescenT 一日の小休憩に。このサイトはMonster2408のデモサイトです。">
         <title>Cafe CrescenT</title>
         <link rel="stylesheet" href="./assets/css/style.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/header.min.css">
     </head>
     <body>
         <?php include("./assets/include/header.php"); ?>
-        <div class="top_banner">
-            <img src="./assets/img/cafelate.jpg" alt="">
+        <div class="contents">
+            <div class="top_banner">
+                <img src="./assets/img/cafelate.jpg" alt="">
+            </div>
         </div>
     </body>
 </html>

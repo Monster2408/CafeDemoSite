@@ -3,3 +3,4 @@
         <img src="./assets/img/icon_zoom.jpg" alt="">
     </div>
 </header>
+<div class="dummy_header"></div>
