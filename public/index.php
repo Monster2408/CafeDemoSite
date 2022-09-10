@@ -20,9 +20,7 @@
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <?php 
-            include("./assets/include/header.php");
-        ?>
+        <?php include("./assets/include/header.php"); ?>
         <div class="top_banner">
             <img src="./assets/img/cafelate.jpg" alt="">
         </div>
