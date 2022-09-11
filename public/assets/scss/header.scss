@@ -6,13 +6,28 @@ header {
     padding: 2px;
     background: #fff;
     width: 100%;
-    .header_icon {
-        width: 100%;
-        border-bottom: solid 1px #000;
-        img {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
+    border-bottom: solid 1px #000;
+    .header_items {
+        display: flex;
+        align-content: stretch;
+        flex-wrap: nowrap;
+        align-items: center;
+        .header_icon {
+            img {
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+            }
+        }
+        .header_menu {
+            .group {
+                .btn {
+
+                }
+                ul {
+                    display: none;
+                }
+            }
         }
     }
 }

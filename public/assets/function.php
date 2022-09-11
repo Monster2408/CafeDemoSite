@@ -7,13 +7,13 @@ class HomePageFunction {
     public $pageUrl;
     public $description;
 
-    public function __construct($conf_path = "./assets/config.php", $title = "MonsterLifeServer") {
+    public function __construct($conf_path = "./assets/config.php", $title = "Cafe CrescenT") {
         $this->conf_path = $conf_path;
         $this->assets_path = str_replace("/config.php", "", $conf_path);
         $this->title = $title;
 
         $this->pageUrl = $this->getUrl().'/';
-        $this->description = "ミニゲーム企画鯖『MonsterLifeServer』のホームページです。";
+        $this->description = "Cafe CrescenT 一日の小休憩に。このサイトはMonster2408のデモサイトです。";
     }
 
     public function setPageUrl($url) {
@@ -34,10 +34,24 @@ class HomePageFunction {
         if (strpos($title, "MonsterLifeServer") === false) {
             $title = $title . " | MonsterLifeServer";
         }
+        echo '<meta charset="utf-8">';
+        echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">';
+
         echo '<title>'.$title.'</title>';
-		echo '<meta property="og:url" content="'.$this->getPageUrl().'" />';
+        echo '<meta name="description" content="'.$this->getDescription().'">';
+
 		echo '<meta property="og:title" content="'.$this->getTitle().'" />';
+		echo '<meta property="og:url" content="'.$this->getPageUrl().'" />';
 		echo '<meta property="og:description" content="'.$this->getDescription().'" />';
+        echo '<meta property="og:site_name" content="'.$this->getSiteName().'" />';
+        echo '<meta property="og:image" content="'.$this->getPageUrl().'/assets/img/facebook_cover.jpg">';
+        echo '<meta property="og:locale" content="ja_JP">';
+        echo '<meta property="og:type" content="website">';
+
+        echo '<meta name="twitter:image" content="'.$this->getPageUrl().'/assets/img/120x120.png" />';
+        echo '<meta name="twitter:title" content="'.$this->getTitle().'" />';
+        echo '<meta name="twitter:description" content="'.$this->getDescription().'" />';
+        echo '<meta name="twitter:card" content="summary" />';
     }
 
     public function printFootScript() {
@@ -74,6 +88,11 @@ class HomePageFunction {
         return $conf["url"];
     }
 
+    public function getSiteName() {
+        include($this->conf_path);
+        return $conf["site_name"];
+    }
+
     public function getSqlHost() {
         include($this->conf_path);
         return $conf["sql"]["host"];
@@ -105,6 +124,11 @@ class HomePageFunction {
 
     public function startsWith($haystack, $needle) {
         return (strpos($haystack, $needle) === 0);
+    }
+
+    public function getFooterTime($year) {
+        if ($year === date('Y')) return date('Y');
+        else return "2022-" . date('Y');
     }
 
 }
